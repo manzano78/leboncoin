@@ -1,0 +1,5 @@
+.idea
+*.iml
+npm-debug.log
+public
+node_modules
