@@ -1,7 +1,7 @@
 import fetchMock from 'fetch-mock'
 import {generate} from 'shortid'
 
-export const messages = [
+const messages = [
     {
         content: "Bonjour, je m'appelle Mikaël!",
         isPrivate: false
