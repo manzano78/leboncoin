@@ -4,7 +4,7 @@
   "description": "Test Technique - leboncoin.fr",
   "main": "src/index.js",
   "scripts": {
-    "build:dev": "webpack-dev-server --env.build=dev --profile --colors --hot --port 3000",
+    "build:dev": "webpack-dev-server --env.build=dev --profile --colors --hot",
     "build:prod": "webpack --env.build=prod --profile --colors",
     "test": "jest"
   },

@@ -18,12 +18,12 @@ const messages = [
 
 export const prepareDataset = () => {
 
-    fetchMock('/api/message/list', {
+    fetchMock.mock('/api/message/list', {
         status: 200,
         body: messages
     });
 
-    fetchMock('/api/message/post', () => ({
+    fetchMock.mock('/api/message/post', () => ({
         status: 200,
         body: {
             messageId: generate()
