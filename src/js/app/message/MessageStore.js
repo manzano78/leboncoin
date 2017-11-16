@@ -1,4 +1,4 @@
-import BaseStore from '../common/store/RootStore'
+import BaseStore from '../common/store/BaseStore'
 import {observable, action, runInAction} from 'mobx'
 
 export default class MessageStore extends BaseStore {
@@ -28,8 +28,8 @@ export default class MessageStore extends BaseStore {
 
     async fetchMessageList(){
 
-        const messageList = await this.rootStore.httpStore.getJSON({
-            url: '/message/list'
+        const {body: messageList} = await this.rootStore.httpStore.getJSON({
+            url: '/api/message/list'
         });
 
         this.setMessageList(messageList);
@@ -42,12 +42,17 @@ export default class MessageStore extends BaseStore {
             isPrivate: this.newMessageIsPrivate
         };
 
-        await this.rootStore.httpStore.postJSON({
-            url: '/message/post',
+        const submitResponse = await this.rootStore.httpStore.postJSON({
+            url: '/api/message/post',
             body: newMessage
         });
 
-        this.messageList.push(newMessage);
-        this.setNewMessageContent('');
+        if(submitResponse.ok){
+
+            const {messageId} = submitResponse.body;
+
+            this.messageList.push({id: messageId, ...newMessage});
+            this.setNewMessageContent('');
+        }
     }
 }

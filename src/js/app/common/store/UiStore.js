@@ -11,7 +11,7 @@ export default class UiStore extends BaseStore {
     constructor(rootStore) {
         super(rootStore);
         this.getText = this.getText.bind(this);
-        this.currentLanguage = TranslationStore.DEFAULT_LANGUAGE;
+        this.currentLanguage = UiStore.DEFAULT_LANGUAGE;
     }
 
     @computed get texts() {
