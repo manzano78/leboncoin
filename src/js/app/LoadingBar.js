@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 import Loading from 'react-loading-bar'
 import {observer, inject} from 'mobx-react'
 
-@inject('httpStore')
+@inject(
+    'httpStore'
+)
 @observer
 export default class LoadingBar extends Component {
 

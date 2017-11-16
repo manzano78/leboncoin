@@ -1,0 +1,31 @@
+.message {
+  border-color: transparent;
+  .panel-body {
+    background-color: @bleuClair;
+    color: #FFFFFF;
+    border-bottom-left-radius: @MessageRadius;
+    border-bottom-right-radius: @MessageRadius;
+    &.public-message-content {
+      border-top-left-radius: @MessageRadius;
+      border-top-right-radius: @MessageRadius;
+    }
+  }
+  .panel-heading {
+    border: solid @bordersColor 1px;
+    border-radius: @MessageRadius @MessageRadius 0 0;
+  }
+}
+
+.messages {
+  min-height: 75vh;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  border: solid 1px @bordersColor;
+}
+
+#message-send-button {
+  width: 100%;
+}

@@ -6,8 +6,7 @@ module.exports = function (env) {
     return webpackMerge(commonConfig(env), {
         plugins: [
             new webpack.optimize.UglifyJsPlugin({
-                comments: false,
-                mangle: false
+                comments: false
             }),
             new webpack.LoaderOptionsPlugin({
                 minimize: true

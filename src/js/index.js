@@ -18,4 +18,4 @@ ReactDOM.render(
     document.getElementById('app-root')
 );
 
-rootStore.messageStore.fetchMessageList();
+rootStore.messageListStore.fetchMessageList();

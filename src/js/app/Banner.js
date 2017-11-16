@@ -1,8 +1,11 @@
 import React, {Component} from 'react'
 import {observer, inject} from 'mobx-react'
 import {Button} from 'react-bootstrap'
+import logoSource from '../../img/logo.png'
 
-@inject('uiStore')
+@inject(
+    'uiStore'
+)
 @observer
 export default class Banner extends Component {
 
@@ -12,6 +15,10 @@ export default class Banner extends Component {
 
         return (
             <nav id="banner" className="navbar navbar-fixed-top">
+
+                <ul className="nav navbar-nav logo">
+                    <img src={logoSource}/>
+                </ul>
 
                 <ul className="nav navbar-nav navbar-right" style={{paddingRight: 12}}>
                     {uiStore.availableLanguages.map(({languageKey, languageLabel}, i) => (
