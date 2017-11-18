@@ -13,7 +13,7 @@ export default class LoadingBar extends Component {
         const {httpStore} = this.props;
 
         return (
-            <Loading color="#5EB8D3" showSpinner={false} show={httpStore.isSynchronizing}/>
+            <Loading color="#2691FC" showSpinner={false} show={httpStore.isSynchronizing}/>
         )
     }
 }
